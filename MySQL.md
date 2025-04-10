@@ -105,7 +105,7 @@ VALUES ('Federica', 'federica@federica', '123456789','user' );
 INSERT INTO books(title, writer, book_description, file_url, id_user)
 VALUES ('Cien años de soledad', 'Gabriel García Márquez', 'Señalada como «catedral gótica del lenguaje», este clásico del siglo XX es el enorme y espléndido tapiz de la saga de la familia Buendía, en la mítica aldea de Macondo','','1' );
 ```
-
+## one-to-one
 En SQL, una relación **one-to-one** (uno a uno) entre dos tablas significa que cada registro en una tabla está relacionado con exactamente un registro en la otra tabla, y viceversa. Esto se puede lograr mediante el uso de una clave primaria y una clave externa.
 
 > la clave foránea se coloca en la tabla que representa la entidad dependiente para hacer una one to one utilizamos la palabra `UNIQUE` para que se ese campo no pueda repetirse
@@ -121,7 +121,7 @@ CREATE TABLE DNI (
 );
 
 ```
-
+## one-to-many
 una relación **one-to-many** (uno a muchos) en una base de datos significa que un registro en una tabla está relacionado con uno o más registros en otra tabla
 
 ```sql
@@ -141,7 +141,7 @@ CREATE TABLE books (
     FOREIGN KEY (User_ID) REFERENCES Users(UserID)
 );
 ```
-
+## many-to-many
 Una relación **many-to-many** (muchos a muchos) en una base de datos ocurre cuando un conjunto de registros en una tabla está relacionado con un conjunto de registros en otra tabla, y viceversa. Esto significa que un registro en **una tabla puede estar relacionado con varios registros en la otra tabla**, y a su vez, un registro **en la segunda tabla puede estar relacionado con varios registros en la primera tabla.**
 
 ```sql
@@ -178,6 +178,8 @@ Esto es fundamental en una tabla de asociación many-to-many, ya que queremos as
 La clave primaria compuesta indica que la combinación de valores en estas columnas identificará de manera única cada fila en la tabla **`Books_Categories`**. Por ejemplo, en una fila específica de **`Books_Categories`**, el par de valores **`(BookID, CategoryID)`** debe ser único en toda la tabla, lo que significa que no puede haber duplicados de esa combinación.
 
 Entonces, no es un "array" en el sentido de una estructura de datos que contiene múltiples valores. Más bien, es una combinación de valores individuales que identifican de manera única una fila en la tabla. En este caso, es una combinación de un **`BookID`** y un **`CategoryID`**, cada uno de los cuales es un identificador único de una tabla relacionada (**`Books`** y **`Categories`** respectivamente).
+
+## notaciones
 
 `n:m`
 
