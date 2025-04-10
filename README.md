@@ -90,8 +90,9 @@ te estarás preguntandoo ¿porqué?
 
 SQL es un lenguaje, no un programa o sistema que pueda ejecutar instrucciones por sí mismo.
 
-(¿Cómo trabajar con MySQL?)[]
-(¿Cómo trabajar con PostgreSQL?)[]
+[¿Cómo trabajar con MySQL?](./MySQL.md)
+[¿Cómo trabajar con PostgreSQL?](./PostgreSQL.md)
+
 
 
 ### ❌ ¿Qué es NoSQL y en qué se diferencia?
