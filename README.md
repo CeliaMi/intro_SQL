@@ -22,23 +22,44 @@ Cada tabla tiene:
 - **Filas (registros):** cada fila representa un dato individual.
 - **Columnas (atributos):** cada columna representa una característica de esos datos.
 
-Por ejemplo, una tabla de usuarios puede tener columnas como `id`, `nombre`, y `email`.
+| id | name | email |
+| --- | --- | --- |
+| 1 | Juana | juana@email.com |
+| 2 |  Roberto| roberto@email.com|
 
->
->🗣 las **relaciones entre tablas**, ayudan a `evitar la duplicación de datos.`
->
-
+ La tabla del ejemplo tiene 2 registros, 3 columnas:
+ 
+- **Filas:**  `1, Juan, juana@email.com`, `2, Roberto, roberto@email.com`
+- **Columnas :** `id`, `nombre`, `email`
 
 ### ¿Cómo funcionan las relaciones?
 
-Para relacionar tablas, se usan **identificadores únicos** llamados `id`.
+---
+>🗣 las **relaciones entre tablas**, ayudan a `evitar la duplicación de datos.`
+---
 
-Por ejemplo:
+Para relacionar tablas, se usan **identificadores únicos** llamados 🗝`id`🗝.
 
-- Una tabla de usuarios tiene un `id` único por cada persona.
-- Una tabla de pedidos puede incluir un campo `usuario_id` que referencia al `id` de un usuario.
+Veamos un ejemplo:
+
+Una tabla de usuarios tiene un `id` único por cada persona.
+Una tabla de pedidos puede incluir un campo `user_id` que referencia al `id` de un usuario.
+
+` tabla users 👇 `
+| id | name | email |
+| --- | --- | --- |
+| 1 | Juana | juana@email.com |
+| 2 |  Roberto| roberto@email.com|
+
+` tabla pedidos 👇 `
+|id | user_id | article | number |
+| --- | --- | --- | --- |
+| 1 | 2 | patatas-small | 2 |
+| 2 | 2 | pizza-jamon-piña| 1 |
 
 Esto permite conectar información entre tablas sin repetir datos. Es decir, los pedidos se relacionan con los usuarios mediante su `id`, en lugar de volver a escribir el nombre o correo del usuario en cada pedido.
+
+En el ejemplo podemos ver como el usuario 2, es decir, Roberto, es el único que ha realizado pedidos.
 
 ---
 
