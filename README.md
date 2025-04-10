@@ -75,22 +75,24 @@ En el ejemplo podemos ver como el usuario 2, es decir, Roberto, es el único que
 
 Con SQL puedes hacer cosas como
 
-- `SELECT`: consultar datos.
-- `INSERT`: agregar nuevos registros.
-- `UPDATE`: modificar datos existentes.
-- `DELETE`: eliminar registros.
+- `INSERT`: agregar nuevos registros. CREATE
+- `SELECT`: consultar datos. READ
+- `UPDATE`: modificar datos existentes. UPDATE
+- `DELETE`: eliminar registros. DELETE
 - `CREATE TABLE`, `ALTER`, `DROP`: modificar la estructura de la base de datos.
 
-Ejemplo simple de consulta:
+Aquí acaba de aparecer el famoso CRUD, que son las acciones que se pueden hacer sobre los datos
+Crearlos, Leerlos, Actualiarlos y eliminarlos.
 
-```sql
+Bien, llegados a este punto, no podemos ponernos a escribir así de la nada directamente SQL.
+Necesitas un SGBD (Sistema de Gestión de Bases de Datos) como PostgreSQL, MySQL, SQLite, etc.
+te estarás preguntandoo ¿porqué?
 
-SELECT nombre, email FROM usuarios WHERE id = 1;
-```
+SQL es un lenguaje, no un programa o sistema que pueda ejecutar instrucciones por sí mismo.
 
-Esta consulta busca el nombre y el correo del usuario con ID 1.
+(¿Cómo trabajar con MySQL?)[]
+(¿Cómo trabajar con PostgreSQL?)[]
 
----
 
 ### ❌ ¿Qué es NoSQL y en qué se diferencia?
 
