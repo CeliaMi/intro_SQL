@@ -1,9 +1,6 @@
 
 # MySQL
 
-Autoria: Celia Millán
-Etiquetas: baso de datos, bbdd, mysql, sql, workbench
-
 ¿Qué es?
 
 **SQL** es un lenguaje de programación para hacer consultas a datos.
@@ -29,12 +26,10 @@ Mac👉 hay que descargarse e instalar por un lado SQL server y por otro lado SQ
 
 Ubuntu 👉se instala SQL por comando de consola y se descarga de la app store workbench.
 
-<aside>
-💡 👀 *las tablas tienen nombres en plural y se escriben minúscula*
 
-</aside>
+> 💡 👀 *las tablas tienen nombres en plural y se escriben minúscula*
 
-COMANDITOS
+## COMANDITOS
 
 si hacemos uso de mysql solo por consola
 
@@ -183,7 +178,7 @@ Entonces, no es un "array" en el sentido de una estructura de datos que contiene
 
 `n:m`
 
-La notación "N:M" es comúnmente utilizada para describir este tipo de relación en el contexto de modelado de bases de datos, donde "N" representa "muchos" y "M" representa "muchos", lo que indica que hay una relación de muchos a muchos entre las entidades involucradas.
+many-to-many
 
 La notación "N:M" o "M:N" se refiere a una relación donde muchos elementos de un conjunto pueden estar relacionados con muchos elementos del otro conjunto. Ambos términos indican lo mismo: una relación many-to-many.
 
