@@ -13,6 +13,14 @@
 
 Es un **lenguaje de consulta**  diseñado específicamente **para gestionar y consultar bases de datos relacionales**. 
 
+Bien, no demos nada por sentado.
+### ¿Sabemos qué es una base de datos?
+
+Es un sistema para almacenar datos y conectarlos entre sí en una unidad lógica,  un conjunto de datos estructurados que pertenecen a un mismo contexto.
+
+> 📖Si yo tengo un cuaderno donde apunto todos los pedidos que hacen mis clientes, mi cuaderno es una base de datos.
+
+Volviendo al punto en el que estabamos antes, hablando de SQL como un **lenguaje de consulta**  diseñado específicamente **para gestionar y consultar bases de datos relacionales**. 
 Vamos hacer hincapié en la parte de bases de datos relacionales, porqué es "la base" de las bases de datos SQL 👇
 
 Una **base de datos relacional** organiza la información en **tablas**.
