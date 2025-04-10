@@ -83,13 +83,16 @@ Con SQL puedes hacer cosas como
 
 Aquí aparece el famoso CRUD, que representa las acciones que se pueden realizar sobre los datos: Crear, Leer, Actualizar y Eliminar.
 
-Bien, llegados a este punto, no podemos ponernos a escribir SQL así como así. Necesitas un SGBD (Sistema de Gestión de Bases de Datos), como PostgreSQL, MySQL, SQLite, etc.
-Seguramente te estarás preguntando: ¿por qué?
+Bien, llegados a este punto, no podemos ponernos a escribir SQL así como así. 
+> Necesitas un **SGBD** (Sistema de Gestión de Bases de Datos), como PostgreSQL, MySQL, SQLite, etc.
+> 
+## Sistema de Gestión de Bases de Datos
+Seguramente te estarás preguntando: ¿por qué?😭😭😭
 
-La respuesta es simple: SQL es un lenguaje, no un programa o sistema que pueda ejecutar instrucciones por sí mismo."**
+La respuesta es simple: SQL es un lenguaje, no un programa o sistema que pueda ejecutar instrucciones por sí mismo.
 
-[¿Cómo trabajar con MySQL?](./MySQL.md)
-[¿Cómo trabajar con PostgreSQL?](./PostgreSQL.md)
+- 👁👉 [¿Cómo trabajar con MySQL?](./MySQL.md)
+- 👁👉 [¿Cómo trabajar con PostgreSQL?](./PostgreSQL.md)
 
 
 
