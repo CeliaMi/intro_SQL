@@ -1,105 +1,88 @@
 
 # MySQL
+---
+Indice:
+- [¿Qué es?](#que-es)
+- [Paso a paso para utilizar MySQL](#paso-a-paso-para-utilizar-mysql)
+- [Comandos básicos](#comandos-básicos)
+- [Relaciones entre tablas](#relaciones-entre-tablas)
+- [Notaciones](#notaciones)
 
-¿Qué es?
 
-**SQL** es un lenguaje de programación para hacer consultas a datos.
+## ¿Que es?
 
-**MySQL** Es un sistema de gestión de Bases de datos relaciones. Es un conjunto de programas que nos permite gestionar todos los datos sin tener que programar demasiado. Nos da las funciones de SQL ya configuradas👌
+👉**SQL** es un lenguaje de programación para hacer consultas a datos.
 
-**Workbench** es un entorno de desarrollo integrado que nos permite gestionarlo todo con una interfaz gráfica más amigable
+👉**MySQL** Es un sistema de gestión de Bases de datos relaciones. Es un conjunto de programas que nos permite gestionar todos los datos sin tener que programar demasiado. Nos da las funciones de SQL ya configuradas👌
 
-- conceptos💁‍♀️:
+👉**Workbench** es un entorno de desarrollo integrado que nos permite gestionarlo todo con una interfaz gráfica más amigable.
     
-    **RDBMS:**  (Relational Database Management System, o Sistema de Gestión de Bases de Datos Relacional) es un tipo de software que gestiona y organiza bases de datos en las que los datos se almacenan y estructuran en **tablas** que están relacionadas entre sí. 
+👉**RDBMS:**  (Relational Database Management System, o Sistema de Gestión de Bases de Datos Relacional) es un tipo de software que gestiona y organiza bases de datos en las que los datos se almacenan y estructuran en **tablas** que están relacionadas entre sí. 
     
-    La **concurrencia de datos** en un **RDBMS** (Sistema de Gestión de Bases de Datos Relacional) se refiere a la capacidad del sistema para permitir que **múltiples usuarios o procesos accedan y modifiquen los mismos datos simultáneamente**, sin que esto afecte la integridad, consistencia o precisión de los datos.
+👉 La **concurrencia de datos** en un **RDBMS** se refiere a la capacidad del sistema para permitir que **múltiples usuarios o procesos accedan y modifiquen los mismos datos simultáneamente**, sin que esto afecte la integridad, consistencia o precisión de los datos.
+
+---
+## Paso a paso para utilizar MySQL
     
 
 Primero de todo instalamos **MySQL Workbench** 💻
 
 ( versión comunitaria gratuita) [https://dev.mysql.com/downloads/](https://dev.mysql.com/downloads/)
 
-Windows 👉tiene un instalador que instala todo de una.
+💻Windows: tiene un instalador que instala todo de una.
 
-Mac👉 hay que descargarse e instalar por un lado SQL server y por otro lado SQL workbench.
+💻Mac: hay que descargarse e instalar por un lado SQL server y por otro lado SQL workbench.
 
-Ubuntu 👉se instala SQL por comando de consola y se descarga de la app store workbench.
+💻Ubuntu: se instala SQL por comando de consola y se descarga de la app store workbench.
 
+
+
+
+## Comandos básicos
+
+Antes de ponernos a crear bases de datos y tablas, tengamos en cuenta esta convención:
 
 > 💡 👀 *las tablas tienen nombres en plural y se escriben minúscula*
 
-## COMANDITOS
-
-si hacemos uso de mysql solo por consola
+Existen varias formas de crear bases de datos, si hacemos uso de mysql solo por consola:
 
 primero buscas la ruta donde tienes el archivo mysql.exe que suele ser un path de este palo:
 
 `C:\Program Files\MySQL\MySQL Server 8.2\bin`
 
-```bash
+```mysql
+
 mysql -u root -p
-(pones tu contraseña)
+//💁‍♀️Escribes  tu contraseña
+//💁‍♀️ comando para visualizar las bases de datos que tienes ya creadas.
 show databases;
-// si vas a usar una base de datos que ya existe
+
+//💁‍♀️ si vas a usar una base de datos que ya existe
 use el_nombre_de_la_basededatos;
-//si vas a crear una nueva base de datos
+
+// 💁‍♀️ si vas a crear una nueva base de datos
 create database nombre_nueva_base_de_datos
 use nombre_base_de_datos
-//si vas a crear una tabla por ejemplo una de user
+
+//💁‍♀️ si vas a crear una tabla por ejemplo una de user
 create table users(id BINARY(16) PRIMARY KEY NOT NULL DEFAULT (UUID_TO_BIN(UUID())), name VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, role VARCHAR(255), password VARCHAR(255)NOT NULL);
-//si quieres ver tus tablas
+
+//💁‍♀️si quieres ver tus tablas
 show tables;
-//si queires ver la estructura concreta de una tabla
+
+//💁‍♀️si queires ver la estructura concreta de una tabla
 describe nombre_de_la_tabla
 ```
 
-```sql
-CREATE TABLE books(
-id int auto_increment,
-PRIMARY KEY (id),
-title varchar(50) NOT NULL,
-writer varchar(50) NOT NULL,
-book_description text(500) NOT NULL,
-id_user INT,
-FOREIGN KEY (id_user) REFERENCES users(id),
-createAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-updateAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP  
-ON UPDATE CURRENT_TIMESTAMP 
-);
-```
 
 ```sql
+// 💁‍♀️si quieres añadir por terminal un registro dentro de una tabla
 INSERT INTO users (name, email, password, role )
 VALUES 
 ('Celia', 'celia@email.com', 'contraseñahaseada', 'admin');
 ```
+## relaciones entre tablas 
 
-para añadir una nueva columna en una tabla ya creada ( en este caso una foreign key)
-
-```sql
- ALTER TABLE files
- ADD id_user INT,
- ADD CONSTRAINT fk_files_users FOREIGN KEY (id_user) REFERENCES users(id);
-```
-
-```sql
-CREATE TABLE users( id int auto_increment, PRIMARY KEY(id), email varchar(50)NOT NULL, password varchar(50)NOT NULL);
-```
-
-```sql
-create table users(id int auto_increment, PRIMARY KEY(id), name VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, role VARCHAR(255), password VARCHAR(255)NOT NULL);
-```
-
-```sql
-INSERT INTO users (name, email, password, role )
-VALUES ('Federica', 'federica@federica', '123456789','user' );
-```
-
-```sql
-INSERT INTO books(title, writer, book_description, file_url, id_user)
-VALUES ('Cien años de soledad', 'Gabriel García Márquez', 'Señalada como «catedral gótica del lenguaje», este clásico del siglo XX es el enorme y espléndido tapiz de la saga de la familia Buendía, en la mítica aldea de Macondo','','1' );
-```
 ## one-to-one
 En SQL, una relación **one-to-one** (uno a uno) entre dos tablas significa que cada registro en una tabla está relacionado con exactamente un registro en la otra tabla, y viceversa. Esto se puede lograr mediante el uso de una clave primaria y una clave externa.
 
@@ -174,7 +157,37 @@ La clave primaria compuesta indica que la combinación de valores en estas colum
 
 Entonces, no es un "array" en el sentido de una estructura de datos que contiene múltiples valores. Más bien, es una combinación de valores individuales que identifican de manera única una fila en la tabla. En este caso, es una combinación de un **`BookID`** y un **`CategoryID`**, cada uno de los cuales es un identificador único de una tabla relacionada (**`Books`** y **`Categories`** respectivamente).
 
+---
+## Comandos de relaciones entre tablas
+----
+
+```sql
+// 💁‍♀️si quiere crear una tabla con una foreign key
+CREATE TABLE books(
+id int auto_increment,
+PRIMARY KEY (id),
+title varchar(50) NOT NULL,
+writer varchar(50) NOT NULL,
+book_description text(500) NOT NULL,
+id_user INT,
+FOREIGN KEY (id_user) REFERENCES users(id),
+createAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updateAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP  
+ON UPDATE CURRENT_TIMESTAMP 
+);
+```
+
+
+```sql
+// 💁‍♀️si quiere añadir una foreing key a una tabla ya creada añadiendo una columna
+ ALTER TABLE files
+ ADD id_user INT,
+ ADD CONSTRAINT fk_files_users FOREIGN KEY (id_user) REFERENCES users(id);
+```
+
+---
 ## notaciones
+---
 
 `n:m`
 
