@@ -47,19 +47,19 @@ psql
 > 💡 👀 *Las tablas suelen tener nombres en plural y en minúscula*
 
 ```sql
--- Ver todas las bases de datos
+--  💁‍♀️Ver todas las bases de datos
 \l
 
--- Conectarse a una base de datos
+-- 💁‍♀️Conectarse a una base de datos
 \c nombre_base
 
--- Crear una base de datos
+--  💁‍♀️Crear una base de datos
 CREATE DATABASE nombre_base;
 
--- Ver todas las tablas
+--  💁‍♀️Ver todas las tablas
 \dt
 
--- Crear una tabla
+--  💁‍♀️Crear una tabla
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -68,11 +68,11 @@ CREATE TABLE users (
     password TEXT NOT NULL
 );
 
--- Insertar registros
+-- 💁‍♀️ Insertar registros
 INSERT INTO users (name, email, role, password)
 VALUES ('Ana', 'ana@email.com', 'admin', 'passwordSegura');
 
--- Ver estructura de una tabla
+-- 💁‍♀️ Ver estructura de una tabla
 \d users
 ```
 
