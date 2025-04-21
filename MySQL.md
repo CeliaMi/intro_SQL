@@ -51,30 +51,30 @@ primero buscas la ruta donde tienes el archivo mysql.exe que suele ser un path d
 ```mysql
 
 mysql -u root -p
-//💁‍♀️Escribes  tu contraseña
-//💁‍♀️ comando para visualizar las bases de datos que tienes ya creadas.
+-- 💁‍♀️Escribes  tu contraseña
+-- 💁‍♀️ comando para visualizar las bases de datos que tienes ya creadas.
 show databases;
 
-//💁‍♀️ si vas a usar una base de datos que ya existe
+-- 💁‍♀️ si vas a usar una base de datos que ya existe
 use el_nombre_de_la_basededatos;
 
-// 💁‍♀️ si vas a crear una nueva base de datos
+-- 💁‍♀️ si vas a crear una nueva base de datos
 create database nombre_nueva_base_de_datos
 use nombre_base_de_datos
 
-//💁‍♀️ si vas a crear una tabla por ejemplo una de user
+-- 💁‍♀️ si vas a crear una tabla por ejemplo una de user
 create table users(id BINARY(16) PRIMARY KEY NOT NULL DEFAULT (UUID_TO_BIN(UUID())), name VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, role VARCHAR(255), password VARCHAR(255)NOT NULL);
 
-//💁‍♀️si quieres ver tus tablas
+-- 💁‍♀️si quieres ver tus tablas
 show tables;
 
-//💁‍♀️si queires ver la estructura concreta de una tabla
+-- 💁‍♀️si queires ver la estructura concreta de una tabla
 describe nombre_de_la_tabla
 ```
 
 
 ```sql
-// 💁‍♀️si quieres añadir por terminal un registro dentro de una tabla
+-- 💁‍♀️si quieres añadir por terminal un registro dentro de una tabla
 INSERT INTO users (name, email, password, role )
 VALUES 
 ('Celia', 'celia@email.com', 'contraseñahaseada', 'admin');
@@ -90,12 +90,12 @@ En SQL, una relación **one-to-one** (uno a uno) entre dos tablas significa que 
 > 
 
 ```sql
-CREATE TABLE DNI (
+CREATE TABLE dni (
   Id INT PRIMARY KEY,
-    User_Id INT UNIQUE, -- Clave foránea que relaciona con User_ID
-    DNI VARCHAR(100),
+    user_id INT UNIQUE, -- Clave foránea que relaciona con user_id
+    dni_number VARCHAR(100),
     FechaVencimiento DATE,
-    FOREIGN KEY (User_ID) REFERENCES User(Id)
+    FOREIGN KEY (user_id) REFERENCES user(id)
 );
 
 ```
@@ -104,19 +104,19 @@ una relación **one-to-many** (uno a muchos) en una base de datos significa que 
 
 ```sql
 CREATE TABLE users (
-    userID INT PRIMARY KEY,
-    username VARCHAR(50),
+    user_id INT PRIMARY KEY,
+    user_name VARCHAR(50),
     email VARCHAR(100),
 );
 ```
 
 ```sql
 CREATE TABLE books (
-    bookID INT PRIMARY KEY,
+    book_id INT PRIMARY KEY,
     title VARCHAR(100),
     author VARCHAR(100),
-    user_ID INT,
-    FOREIGN KEY (User_ID) REFERENCES Users(UserID)
+    user_id INT,
+    FOREIGN KEY (User_ID) REFERENCES users(user_id)
 );
 ```
 ### many-to-many
@@ -125,14 +125,14 @@ Una relación **many-to-many** (muchos a muchos) en una base de datos ocurre cua
 ```sql
 
 );CREATE TABLE categories (
-    CategoryID INT PRIMARY KEY,
-    CategoryName VARCHAR(50),
+    category_id INT PRIMARY KEY,
+    category_name VARCHAR(50),
 );
 ```
 
 ```sql
 CREATE TABLE books (
-bookID INT PRIMARY KEY,
+book_id INT PRIMARY KEY,
 title VARCHAR(100),
 author VARCHAR(100),
 
@@ -141,21 +141,21 @@ author VARCHAR(100),
 
 ```sql
 CREATE TABLE books_categories (
-Book_ID INT,
-Category_ID INT,
-PRIMARY KEY (Book_ID, Category_ID),
-FOREIGN KEY (Book_ID) REFERENCES Books(BookID),
-FOREIGN KEY (Category_ID) REFERENCES Categories(CategoryID)
+book_id INT,
+category_id INT,
+PRIMARY KEY (Book_ID, category_id),
+FOREIGN KEY (Book_ID) REFERENCES books(book_id),
+FOREIGN KEY (Category_ID) REFERENCES categories(category_id)
 );
 ```
 
-`PRIMARY KEY (BookID, CategoryID),`
+`PRIMARY KEY (book_id, category_id),`
 
-Esto es fundamental en una tabla de asociación many-to-many, ya que queremos asegurarnos de que no haya duplicados de relaciones entre libros y categorías. Al hacer que la combinación de **`LibroID`** y **`CategoriaID`** sea la clave primaria, garantizamos que cada libro solo pueda estar asociado con una categoría una vez, y viceversa.
+Esto es fundamental en una tabla de asociación many-to-many, ya que queremos asegurarnos de que no haya duplicados de relaciones entre libros y categorías. Al hacer que la combinación de **`book_id`** y **`category_id`** sea la clave primaria, garantizamos que cada libro solo pueda estar asociado con una categoría una vez, y viceversa.
 
-La clave primaria compuesta indica que la combinación de valores en estas columnas identificará de manera única cada fila en la tabla **`Books_Categories`**. Por ejemplo, en una fila específica de **`Books_Categories`**, el par de valores **`(BookID, CategoryID)`** debe ser único en toda la tabla, lo que significa que no puede haber duplicados de esa combinación.
+La clave primaria compuesta indica que la combinación de valores en estas columnas identificará de manera única cada fila en la tabla **`Books_Categories`**. Por ejemplo, en una fila específica de **`Books_Categories`**, el par de valores **`(book_id, category_id)`** debe ser único en toda la tabla, lo que significa que no puede haber duplicados de esa combinación.
 
-Entonces, no es un "array" en el sentido de una estructura de datos que contiene múltiples valores. Más bien, es una combinación de valores individuales que identifican de manera única una fila en la tabla. En este caso, es una combinación de un **`BookID`** y un **`CategoryID`**, cada uno de los cuales es un identificador único de una tabla relacionada (**`Books`** y **`Categories`** respectivamente).
+Entonces, no es un "array" en el sentido de una estructura de datos que contiene múltiples valores. Más bien, es una combinación de valores individuales que identifican de manera única una fila en la tabla. En este caso, es una combinación de un **`book_id`** y un **`category_id`**, cada uno de los cuales es un identificador único de una tabla relacionada (**`books`** y **`categories`** respectivamente).
 
 
 ### Comandos de relaciones entre tablas
