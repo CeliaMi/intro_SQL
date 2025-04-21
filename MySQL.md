@@ -4,12 +4,10 @@
 Indice:
 - [¿Qué es?](#que-es)
 - [Paso a paso para utilizar MySQL](#paso-a-paso-para-utilizar-mysql)
-- [Comandos básicos](#comandos-básicos)
 - [Relaciones entre tablas](#relaciones-entre-tablas)
-- [Notaciones](#notaciones)
 
 
-## ¿Que es?
+## ¿Qué es?
 
 👉**SQL** es un lenguaje de programación para hacer consultas a datos.
 
@@ -38,7 +36,7 @@ Primero de todo instalamos **MySQL Workbench** 💻
 
 
 
-## Comandos básicos
+### comandos básicos
 
 Antes de ponernos a crear bases de datos y tablas, tengamos en cuenta esta convención:
 
@@ -81,9 +79,11 @@ INSERT INTO users (name, email, password, role )
 VALUES 
 ('Celia', 'celia@email.com', 'contraseñahaseada', 'admin');
 ```
-## relaciones entre tablas 
+---
 
-## one-to-one
+## Relaciones entre tablas 
+
+### one-to-one
 En SQL, una relación **one-to-one** (uno a uno) entre dos tablas significa que cada registro en una tabla está relacionado con exactamente un registro en la otra tabla, y viceversa. Esto se puede lograr mediante el uso de una clave primaria y una clave externa.
 
 > la clave foránea se coloca en la tabla que representa la entidad dependiente para hacer una one to one utilizamos la palabra `UNIQUE` para que se ese campo no pueda repetirse
@@ -99,7 +99,7 @@ CREATE TABLE DNI (
 );
 
 ```
-## one-to-many
+### one-to-many
 una relación **one-to-many** (uno a muchos) en una base de datos significa que un registro en una tabla está relacionado con uno o más registros en otra tabla
 
 ```sql
@@ -119,7 +119,7 @@ CREATE TABLE books (
     FOREIGN KEY (User_ID) REFERENCES Users(UserID)
 );
 ```
-## many-to-many
+### many-to-many
 Una relación **many-to-many** (muchos a muchos) en una base de datos ocurre cuando un conjunto de registros en una tabla está relacionado con un conjunto de registros en otra tabla, y viceversa. Esto significa que un registro en **una tabla puede estar relacionado con varios registros en la otra tabla**, y a su vez, un registro **en la segunda tabla puede estar relacionado con varios registros en la primera tabla.**
 
 ```sql
@@ -157,9 +157,9 @@ La clave primaria compuesta indica que la combinación de valores en estas colum
 
 Entonces, no es un "array" en el sentido de una estructura de datos que contiene múltiples valores. Más bien, es una combinación de valores individuales que identifican de manera única una fila en la tabla. En este caso, es una combinación de un **`BookID`** y un **`CategoryID`**, cada uno de los cuales es un identificador único de una tabla relacionada (**`Books`** y **`Categories`** respectivamente).
 
----
-## Comandos de relaciones entre tablas
-----
+
+### Comandos de relaciones entre tablas
+
 
 ```sql
 // 💁‍♀️si quiere crear una tabla con una foreign key
@@ -185,9 +185,8 @@ ON UPDATE CURRENT_TIMESTAMP
  ADD CONSTRAINT fk_files_users FOREIGN KEY (id_user) REFERENCES users(id);
 ```
 
----
-## notaciones
----
+### notaciones
+
 
 `n:m`
 
