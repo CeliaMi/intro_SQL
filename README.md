@@ -92,7 +92,7 @@ Seguramente te estarás preguntando: ¿por qué?😭😭😭
 La respuesta es simple: SQL es un lenguaje, no un programa o sistema que pueda ejecutar instrucciones por sí mismo.
 
 - 👁👉 [¿Cómo trabajar con MySQL?](./MySQL.md)
-- 👁👉 [¿Cómo trabajar con PostgreSQL?](./PostgreSQL.md)
+- 👁👉 [¿Cómo trabajar con PostgreSQL?](./postgreSQL.md)
 
 
 
