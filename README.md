@@ -94,6 +94,10 @@ La respuesta es simple: SQL es un lenguaje, no un programa o sistema que pueda e
 - 👁👉 [¿Cómo trabajar con MySQL?](./MySQL.md)
 - 👁👉 [¿Cómo trabajar con PostgreSQL?](./postgreSQL.md)
 
+  De todas formas antes de meterte directamente con un SGBD, si es tu primera vez con SQL te recomiendo comenzar con:
+- 👶 [web guiada para hacer primeras consultas ](https://www.sql-easy.com/es/tutorial/)
+- 👶 [juego de misterio](https://mystery.knightlab.com/)
+
 
 
 ### ❌ ¿Qué es NoSQL y en qué se diferencia?
