@@ -8,9 +8,6 @@
 ---
 
 
-🖐Atención: No es un lenguaje de programación como JavaScript.
-
-
 Es un **lenguaje de consulta**  diseñado específicamente **para gestionar y consultar bases de datos relacionales**. 
 
 Bien, no demos nada por sentado.
