@@ -9,7 +9,7 @@ Indice:
 
 ## ¿Qué es?
 
-👉**SQL** es un lenguaje de programación para hacer consultas a datos.
+👉**SQL** es un lenguaje para hacer consultas a datos.
 
 👉**MySQL** Es un sistema de gestión de Bases de datos relaciones. Es un conjunto de programas que nos permite gestionar todos los datos sin tener que programar demasiado. Nos da las funciones de SQL ya configuradas👌
 
